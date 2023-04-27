@@ -62,11 +62,10 @@ body{
 
 
 /* Header styling */
-#logo{
+#logo,#infobtn{
     height: 8vh;
     width: 8vh;
     border-radius: 50%;
-    margin-left: 3vw ;
 }
 #appname{
     font-size: 200%;
