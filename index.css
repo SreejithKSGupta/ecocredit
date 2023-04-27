@@ -114,6 +114,9 @@ body{
     height: 30vh;
 }
 
+
+
+
 .homeimage{
     width: 100%;
     height: 100%;
@@ -196,4 +199,37 @@ body{
 
 ::-webkit-scrollbar{
     width: 0px;
+}
+
+
+
+#sCFPresult{
+    height: 80vh;
+    width: 100%;
+    background-color: var(--bgcol);
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: scroll;
+}
+
+#scfpvalue,#scfpoffsetcost{
+    font-size: 300%;
+    width: 70%;
+    text-align: center;
+    color: aquamarine;
+    border-radius: var(--bordad);
+    background-color: var(--primcol);
+    margin-top:5vh;
+    padding: var(--padding);
+}
+
+#scfpreduce,#scfpdonate{
+    font-size: 150%;
+    width: 90vw;
+    text-align: center;
+    color: aquamarine;
+    border-radius: var(--bordad);
+    background-color: var(--primcol);
+    margin-top: 5vh;
+    padding: var(--padding);
 }
