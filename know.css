@@ -1,0 +1,68 @@
+:root{
+    --primcol:#06c1da;
+    --selcol:#3391dd;
+    --bgcol: #363636;
+    --ngobgcol: #f5f5f5;
+    --propcolor: #0a0a0a;
+
+    --bordad:20px;
+    --margin:10px;
+    --padding:10px;
+}
+
+*,*:before,*:after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    width:70vw;
+    margin: auto;
+    padding: var(--padding);
+
+}
+.knowtext{
+    color: white;
+    border:var(--bordad);
+    border-radius: 30px;
+    padding: calc(var(--padding)*2);
+    font-size: 140%;
+    margin: var(--margin);
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+
+
+}
+.knowhead{
+    background-color:var(--bgcol);
+    margin: var(--margin);
+    
+}
+.knowsemihead{
+    background-color:rgb(65, 64, 64);
+    margin: var(--margin);
+    font-size: 100%;
+}
+#CarbonFootprint{
+    background-color: rgb(7, 7, 122);
+}
+#CarbonFootprintEffect{
+    background-color: rgb(133, 3, 3);
+}
+#carbonFootpriintReduce{
+    background-color: rgb(2, 97, 2);
+}
