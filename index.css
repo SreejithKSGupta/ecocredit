@@ -61,6 +61,7 @@ body{
 
 
 
+
 /* Header styling */
 #logo,#infobtn,.navimg {
     height: 8vh;
@@ -110,6 +111,7 @@ body{
 }
 
 #homeslider{
+    margin-top: 2vh;
     width: 90%;
     height: 30vh;
 }
@@ -232,4 +234,14 @@ body{
     background-color: var(--primcol);
     margin-top: 5vh;
     padding: var(--padding);
+}
+
+.pageItem{
+    width: 100vw;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+    overflow: scroll;
 }
