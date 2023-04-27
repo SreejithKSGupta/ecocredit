@@ -62,7 +62,7 @@ body{
 
 
 /* Header styling */
-#logo,#infobtn{
+#logo,#infobtn,.navimg {
     height: 8vh;
     width: 8vh;
     border-radius: 50%;
