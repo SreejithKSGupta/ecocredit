@@ -101,13 +101,20 @@ body{
 
 }
 .ngoWebVisit{   
-    background-color: green;  
+    background-color: green;
+    cursor: pointer;
 }
 .ngoWebVisit:hover{
     background-color: #00ff00;
     box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
     transform: scale(1.05);
     transition: 0.5s;
+    cursor: pointer;
+
+}
+.ngolink{
+    text-decoration: none;
+    color: antiquewhite;
 }
 .ngoPay{
     background-color: #06196e;
@@ -120,6 +127,7 @@ body{
     box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
     margin: var(--margin);
     text-align: center;
+    cursor: pointer;
 
 }
 .ngoPay:hover{
@@ -127,6 +135,7 @@ body{
     box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
     transform: scale(1.05);
     transition: 0.5s;
+    cursor: pointer;
 }
 @media screen and (max-width: 800px) {
     body{
