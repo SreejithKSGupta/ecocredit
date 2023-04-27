@@ -7,6 +7,7 @@
       output.value = value;
     });
   });
+  var CFP;
 
   const checkbtn = document.getElementById("cfindfp");
     checkbtn.addEventListener("click", calculateCarbonFootprint);
@@ -73,7 +74,7 @@
     const personalcost=meatCarbon + dairyCarbon + fishCarbon + bikeCarbon + carCarbon 
     const familycost=publicTransportCarbon + electricVehicleCarbon + heavyElectronicsCarbon + lightElectronicsCarbon + clothesBoughtCarbon;
     const totalCarbonFootprint = (personalcost+familycost)/familyMembersValue;
-  
+    CFP=totalCarbonFootprint.toFixed(2);
     // display the total carbon footprint in the HTML
     document.getElementById('carbonFootprintResult').innerHTML = `${totalCarbonFootprint.toFixed(2)} kg CO2e`;
 
