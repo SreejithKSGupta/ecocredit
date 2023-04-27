@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calc</title>
+  </head>
+  <body>
+    <!--carbon footprint calculator-->
+    <h1>Carbon Footprint Calculator</h1>
+    <div id="cal-food">
+      <h1>Food</h1>
+      <div>
+        <label for="food">meat</label>
+        <!--slider for meat-->
+        <input
+          type="range"
+          name="meat"
+          id="cmeat"
+          min="0"
+          step="0.25"
+          max="5"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="cmeatInput" value="0" />
+
+        <label for="food">dairy</label>
+        <!--slider for dairy-->
+        <input
+          type="range"
+          name="dairy"
+          id="cdairy"
+          min="0"
+          step="5"
+          max="100"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="cdairyInput" value="0" />
+
+        <label for="food">vegetables</label>
+        <!--slider for vegetables-->
+        <input
+          type="range"
+          name="vegetables"
+          id="cvegetables"
+          min="0"
+          step="5"
+          max="100"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="cvegetablesInput" value="0" />
+
+        <label for="food">fruit</label>
+        <!--slider for fruit-->
+        <input
+          type="range"
+          name="fruit"
+          id="cfruit"
+          min="0"
+          step="5"
+          max="100"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="cfruitInput" value="0" />
+
+        <label for="food">grains</label>
+        <!--slider for grains -->
+        <input
+          type="range"
+          name="grains"
+          id="cgrains"
+          min="0"
+          step="5"
+          max="100"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="cgrainsInput" value="0" />
+      </div>
+    </div>
+
+    <!---transport-->
+    <div id="cal-food">
+      <h1>Transpotation</h1>
+      <div>
+        <label for="Transport">bike</label>
+        <!--slider for meat-->
+        <input
+          type="range"
+          name="Bike"
+          id="cbike"
+          min="0"
+          step="0.25"
+          max="5"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="cbikeInput" value="0" />
+
+        <label for="transport">Car</label>
+        <!--slider for dairy-->
+        <input
+          type="range"
+          name="Car"
+          id="ccar"
+          min="0"
+          step="5"
+          max="100"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="ccarInput" value="0" />
+
+        <label for="transport">Public Transport</label>
+        <!--slider for vegetables-->
+        <input
+          type="range"
+          name="Public transport"
+          id="cptransport"
+          min="0"
+          step="5"
+          max="100"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="cptransportInput" value="0" />
+
+        <label for="transport">Electric Vehicle</label>
+        <!--slider for fruit-->
+        <input
+          type="range"
+          name="Electric Vehicle"
+          id="cevehicle"
+          min="0"
+          step="5"
+          max="100"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="cevehicleInput" value="0" />
+
+        <label for="food">Aeroplane</label>
+        <!--slider for grains -->
+        <input
+          type="range"
+          name="Aeroplane"
+          id="cflight"
+          min="0"
+          step="5"
+          max="100"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="cflightInput" value="0" />
+      </div>
+    </div>
+
+    <!---Daily Life-->
+    <div id="cal-food">
+      <h1>Daily Life</h1>
+      <div>
+        <label for="Daily life">Hevy Electronics</label>
+        <!--slider for HeavyElectronics-->
+        <input
+          type="range"
+          name="Heavy Electronics"
+          id="chelectronics"
+          min="0"
+          step="0.25"
+          max="5"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="chelectronicsInput" value="0" />
+
+        <label for="Daily life">Light Electronics</label>
+        <!--slider for LightElectronics-->
+        <input
+          type="range"
+          name="Light Electronics"
+          id="clelectronics"
+          min="0"
+          step="5"
+          max="100"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="clelectronicsInput" value="0" />
+
+        <label for="transport">Clothes Bought</label>
+        <!--slider for clothes Bought-->
+        <input
+          type="range"
+          name="Clothes Bought"
+          id="cclothes"
+          min="0"
+          step="5"
+          max="100"
+          value="0"
+          step="1"
+        />
+        <input type="text" id="cclothesInput" value="0" />
+      </div>
+    </div>
+
+    <script src="calc.js"></script>
+  </body>
+</html>
