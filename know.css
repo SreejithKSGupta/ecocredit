@@ -44,18 +44,36 @@ body{
     font-size: 140%;
     margin: var(--margin);
     box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    overflow: auto;
+    word-wrap: break-word;
+    word-break: keep-all;
 
 
 }
 .knowhead{
     background-color:var(--bgcol);
     margin: var(--margin);
+    color: white;
+    border:var(--bordad);
+    border-radius: 30px;
+    padding: calc(var(--padding)*2);
+    font-size: 140%;
+    margin: var(--margin);
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
     
 }
 .knowsemihead{
     background-color:rgb(65, 64, 64);
     margin: var(--margin);
     font-size: 100%;
+}
+.knowimg{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height:50vh;
+    width:70vw;
+    border-radius: var(--bordad);
 }
 #CarbonFootprint{
     background-color: rgb(7, 7, 122);
@@ -65,4 +83,9 @@ body{
 }
 #carbonFootpriintReduce{
     background-color: rgb(2, 97, 2);
+}
+@media screen and (max-width: 800px){
+    body{
+        width:100vw;
+    }
 }
