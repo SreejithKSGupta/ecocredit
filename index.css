@@ -1,6 +1,6 @@
 :root{
-    --primacol:#ff00ff;
-    --selcol:#dd33dd;
+    --primcol:#06c1da;
+    --selcol:#3391dd;
     --bgcol: #363636;
 
     --bordad:20px;
@@ -17,14 +17,14 @@
 .col{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 .row{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -37,5 +37,27 @@ body{
 #header{
     height: 10vh;
     width: 100vw;
-    background-color: var(--primacol);
+    background-color: var(--primcol);
 }
+
+#content{
+    height: 80vh;
+    width: 100vw;
+    background-color: var(--bgcol);
+}
+
+#navbar{
+    height: 10vh;
+    width: 100vw;
+    background-color: var(--primcol);
+}
+
+
+
+#homepage{
+    height: 80vw;
+    width: 100%;
+    background-color: var(--bgcol);
+}
+
+/* Hompepage  styling */
