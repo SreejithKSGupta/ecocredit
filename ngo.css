@@ -128,6 +128,16 @@ body{
     transition: 0.5s;
 }
 @media screen and (max-width: 800px) {
+    body{
+        width: 100vw;
+    }
+    .ngoBody{
+        display: flex;
+        flex-direction: column;  
+    }
+    .ngoproperty{
+        width: 100%;
+    }
 
     
   }
