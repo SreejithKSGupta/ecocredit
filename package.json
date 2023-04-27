@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "firebase": "^9.20.0",
+    "node": "^19.8.1",
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2"
+  },
+  "name": "ecocredit",
+  "description": "Ecocredit is a gamified web application made with HTML, CSS and JavaScript, that helps you Offsets your carbon footprint that rewards you with NFTs for each contribution you make.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

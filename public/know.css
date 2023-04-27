@@ -1,0 +1,62 @@
+.knowtext{
+    color: white;
+    border:var(--bordad);
+    border-radius: 30px;
+    padding: calc(var(--padding)*2);
+    font-size: 140%;
+    margin: var(--margin);
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    word-wrap: break-word;
+    word-break: keep-all;
+
+
+}
+.knowhead{
+    background-color:var(--bgcol);
+    margin: var(--margin);
+    color: white;
+    border:var(--bordad);
+    border-radius: 30px;
+    padding: calc(var(--padding)*2);
+    font-size: 160%;
+    margin: var(--margin);
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    text-align: center;
+    margin-top: calc(var(--margin)*8);
+    
+}
+.knowsemihead{
+    background-color:rgb(248, 191, 2);
+    font-weight: bolder;
+    margin: var(--margin);
+    font-size: 100%;
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    color: rgb(0, 0, 0);
+    border:var(--bordad);
+    border-radius: 30px;
+    padding: calc(var(--padding)*2);
+    text-align: center; 
+    margin-top: calc(var(--margin)*6);
+
+
+}
+.knowimg{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height:50vh;
+    width:70vw;
+    border-radius: var(--bordad);
+}
+#CarbonFootprint{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+#CarbonFootprintEffect{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+#carbonFootpriintReduce{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}

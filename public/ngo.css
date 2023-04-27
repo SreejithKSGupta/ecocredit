@@ -1,0 +1,111 @@
+.ngos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    background-color: var(--ngobgcol);
+    margin: var(--margin);
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+}
+.logo{
+    border-radius: 50%;
+    height:9vh;
+    width: 9vh;
+}
+.ngoheader{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+
+}
+
+.ngoHead{
+    font-size: larger;
+    font-weight: bolder;
+    color: var(--primcol);
+    padding: var(--padding);
+}
+.ngoAbout{
+    font-size: large;
+    padding: calc(var(--padding)*3);
+    word-wrap: break-word;
+    word-break: keep-all;
+    font-family: 'georgia';
+    
+
+}
+.ngoBody{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.ngoproperty{
+    width: 40%;
+    padding: var(--padding);
+    background-color: var(--propcolor);
+    border-radius: 30px;
+    margin: var(--margin);
+    text-align: center;
+    color: antiquewhite;
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+
+}
+.ngoWebVisit{   
+    background-color: green;
+    cursor: pointer;
+}
+.ngoWebVisit:hover{
+    background-color: #00ff00;
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    transform: scale(1.05);
+    transition: 0.5s;
+    cursor: pointer;
+
+}
+.ngolink{
+    text-decoration: none;
+    color: antiquewhite;
+}
+.ngoPay{
+    background-color: #06196e;
+    color: antiquewhite;
+    font-size: 200%;
+    font-weight: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: calc(var(--padding)*2);
+    border-radius: var(--bordad);
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    margin: var(--margin);
+    text-align: center;
+    cursor: pointer;
+
+}
+.ngoPay:hover{
+    background-color: #002fff;
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    transform: scale(1.05);
+    transition: 0.5s;
+    cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+    body{
+        width: 100vw;
+    }
+    .ngoBody{
+        display: flex;
+        flex-direction: column;  
+    }
+    .ngoproperty{
+        width: 100%;
+    }
+
+    
+  }
+

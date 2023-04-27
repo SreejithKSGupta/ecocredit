@@ -1,11 +1,66 @@
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider,signInWithPopup,signOut} from "firebase/auth";
+const firebaseConfig = {
+  apiKey: "AIzaSyAT-4YqiyuGVuQl_ADh0QivNYIJEEwPgaI",
+  authDomain: "ecoredit.firebaseapp.com",
+  projectId: "ecoredit",
+  storageBucket: "ecoredit.appspot.com",
+  messagingSenderId: "69685633987",
+  appId: "1:69685633987:web:041c223d5cd2f285281376",
+  measurementId: "G-JFLPFFX3Z5"
+};
+
+const app = initializeApp(firebaseConfig);
+const provider = new GoogleAuthProvider();
+const auth = getAuth(app);
+
+
+
+
 homeslider();
 addbtns();
+setUserLogHandler();
 var CFP;
 var regval;
 var amount=0;
 const sliders = document.querySelectorAll("input[type='range']");  
 document.getElementById('homepage').classList.toggle("active");
 
+function setUserLogHandler(){
+    const auth = getAuth();
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in, see docs for a list of available properties
+            // https://firebase.google.com/docs/reference/js/firebase.User
+            document.getElementById("navbtnprof").style.display="block";
+            document.getElementById("navbtnsign").style.display="none";
+            document.getElementById("navbtnsign").style.display="none";
+            console.log("user signed in");
+        }
+        else{
+            document.getElementById("navbtnprof").style.display="none";
+            document.getElementById("navbtnsign").style.display="block";
+            document.getElementById("navbtnsign").style.display="block";
+            console.log("no user");
+        }
+    }
+)}
+
+ function loginout(){
+    const auth = getAuth();
+    const btn = document.getElementById("profileLoginbtn");
+    if(btn.innerHTML=="Sign Out"){
+        signOut(auth);
+        btn.innerHTML="Sign In";
+        console.log("signed out");
+        document.getElementById("profilename").innerHTML="Guest";
+    }
+    else{
+        signInWithPopup(auth, provider);
+        console.log("signed in");
+        document.getElementById("profilename").innerHTML=auth.currentUser.displayName;
+    }
+ }       
 
 sliders.forEach(slider => {
   slider.addEventListener("input", () => {
@@ -81,7 +136,7 @@ function calculateCarbonFootprint() {
   CFP=totalCarbonFootprint.toFixed(2);
   regval=regionMultiplier;
   // display the total carbon footprint in the HTML
-  switchtopage('sCFPresultpage');
+  switchtopage('sCFPresultpage',undefined,"Carbon Footprint");
 
 }
 
@@ -99,22 +154,24 @@ function homeslider(){
 
 function addbtns(){
     document.getElementById("cfindfp").addEventListener("click", calculateCarbonFootprint);
-    document.getElementById("navbtnhome").addEventListener("click", function(){switchtopage("homepage",undefined)});
-    document.getElementById("navbtnknow").addEventListener("click", function(){switchtopage("knowpage",undefined)});
-    document.getElementById("navbtnprof").addEventListener("click", function(){switchtopage("profilepage",undefined)});
-    document.getElementById("NGOlistCTAbtn").addEventListener("click", function(){switchtopage("ngopage",undefined)});
-    document.getElementById("homeCFP").addEventListener("click", function(){switchtopage("CFPcalculcpage",undefined)});
-    document.getElementById("scfpreduce").addEventListener("click", function(){switchtopage("knowpage",undefined)});
-    document.getElementById("scfpdonate").addEventListener("click", function(){switchtopage("ngopage",undefined)});
-    document.getElementById("homeprofile").addEventListener("click", function(){switchtopage("profilepage",undefined)});
+    document.getElementById("navbtnhome").addEventListener("click", function(){switchtopage("homepage",undefined,"EcoCredits")});
+    document.getElementById("navbtnknow").addEventListener("click", function(){switchtopage("knowpage",undefined,"Knowledge Base")});
+    document.getElementById("navbtnprof").addEventListener("click", function(){switchtopage("profilepage",undefined,"Profile")});
+    document.getElementById("NGOlistCTAbtn").addEventListener("click", function(){switchtopage("ngopage",undefined,"NGO's")});
+    document.getElementById("homeCFP").addEventListener("click", function(){switchtopage("CFPcalculcpage",undefined,"CFP Finder")});
+    document.getElementById("scfpreduce").addEventListener("click", function(){switchtopage("knowpage",undefined,"Knowledge Base")});
+    document.getElementById("scfpdonate").addEventListener("click", function(){switchtopage("ngopage",undefined,"NGO's")});
+    document.getElementById("homeprofile").addEventListener("click", function(){switchtopage("profilepage",undefined,"Profile")});
+    document.getElementById("profileLoginbtn").addEventListener("click", function(){loginout()});
 }
 
-function switchtopage(page, tval){
+function switchtopage(page, tval,head){
     var pages=document.getElementsByClassName("pageItem");
     for(var i=0; i<pages.length; i++){
         pages[i].classList.remove("active");
     }
     document.getElementById(page).classList.toggle("active");
+    document.getElementById("appname").innerHTML=head;
     if(page=="sCFPresultpage"){
         document.getElementById("scfpvalue").innerHTML=CFP+" kg CO2e/month";
         amount=CFP*3.25*regval;
@@ -140,7 +197,7 @@ function switchtopage(page, tval){
                     console.log('gold');
                     mintNFT("https://ipfs.io/ipfs/bafkreifjflj7vvsngsad3d6xrgibynz6trirmcii6wweturphryca5inzi");
                     }   
-                switchtopage("profilepage", amount.toFixed(2))});
+                switchtopage("profilepage", amount.toFixed(2), "Profile")});
         }
         }
     if(page=="profilepage"){
