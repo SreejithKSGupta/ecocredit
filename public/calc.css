@@ -57,7 +57,7 @@ input{
 
 
   .bdataipt{
-    width: 90%;
+    width: clamp(400px, 80%, 800px);
     border-radius: var(--bordad);
     padding: var(--padding);
     margin: var(--margin);

@@ -7,7 +7,7 @@
     justify-content: space-around;
     background-color: var(--primcol);
     box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
-    width: 90vw;
+    width:clamp(300px, 60vw, 900px);
     border-radius: var(--bordad);
 }
 .profilebox{
@@ -35,7 +35,7 @@
     box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
     text-align: center;
     cursor: pointer;
-    width: 20vw;
+    width: clamp(20px, 50vw, 400px);
     margin: auto;
     margin-bottom:calc(var(--margin)*2);
 }
@@ -71,10 +71,11 @@
     width: 20vw;
 }
 #profileNFTimg{
-    width: 80vw;
+    width: clamp(300px, 60vw, 800px);
     display: grid ;
     grid-template-columns: repeat(3, 1fr);
     margin: auto;
     border-radius: var(--bordad);
     background-color: rgba(0, 255, 255, 0.39);
+    padding: var(--padding);
 }

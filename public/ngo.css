@@ -1,14 +1,14 @@
 .ngos{
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    border-radius: 30px;
+    border-radius: var(--bordad);
     background-color: var(--primcol);
     margin: var(--margin);
     box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
-    margin: calc(var(--bordad)*2);
 }
 .logo{
     border-radius: 50%;
@@ -34,7 +34,7 @@
     font-style: oblique;
 }
 .ngoAbout{
-    font-size: large;
+    font-size: 100%;
     padding: calc(var(--padding)*3);
     word-wrap: break-word;
     word-break: keep-all;
@@ -42,7 +42,8 @@
     font-weight: lighter;
     font-style: oblique;
     color: white;
-    
+    width: clamp(400px, 90%, 800px);
+    font-size: 80%;
 
 }
 .ngoBody{
@@ -50,12 +51,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
+    width: clamp(250px, 80%, 800px);
 
 }
 
 .ngoproperty{
-    width: 40%;
-    padding: var(--padding);
+    width: clamp(250px, 30%, 500px);
     background-color: var(--selcol);
     border-radius: 30px;
     margin: var(--margin);
@@ -65,6 +67,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri';
     font-weight: lighter;
     font-style: oblique;
+    font-size: 80%;
 
 }
 .ngoWebVisit{   
@@ -106,18 +109,5 @@
     transition: 0.5s;
     cursor: pointer;
 }
-@media screen and (max-width: 800px) {
-    body{
-        width: 100vw;
-    }
-    .ngoBody{
-        display: flex;
-        flex-direction: column;  
-    }
-    .ngoproperty{
-        width: 100%;
-    }
 
-    
-  }
 

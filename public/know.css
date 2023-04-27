@@ -9,9 +9,7 @@
     word-wrap: break-word;
     word-break: keep-all;
     padding: calc(var(--padding)*3);
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri';
-    font-weight: lighter;
-    font-style: oblique;
+    width: clamp(400px, 90%, 1000px);
 
 
 }

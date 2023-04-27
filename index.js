@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import {  getDatabase, ref,get, set,update } from "firebase/database";
+import {  getDatabase, ref,get, set } from "firebase/database";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAT-4YqiyuGVuQl_ADh0QivNYIJEEwPgaI",
@@ -20,7 +20,7 @@ var CFP;
 var regval;
 var amount = 0;
 const sliders = document.querySelectorAll("input[type='range']");
-document.getElementById('CFPcalculcpage').classList.toggle("active");
+document.getElementById('homepage').classList.toggle("active");
 var link1,link2;
 
 homeslider();

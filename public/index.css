@@ -6,6 +6,8 @@
     --propcolor:#0a0a0a;
     --hovercolor:#013096;
 
+    --info:"Info is this";
+
     --bordad:20px;
     --margin:10px;
     --padding:10px;
@@ -70,13 +72,17 @@ body{
     font-style: oblique;
     color: white;
 }
-#infobox{
+#infobtn:hover::before{
+    content:var(--info);
+    position: relative;
+    font-size: larger;
     height: 8vh;
-    width: 8vh;
-    border-radius: 50%;
-    margin-right: 5%;
-    margin-right: 3vw;
+    width: 50vw;
+    right: 3vw;
+    color: #01236e;
+    border-radius:var(--bordad);
     cursor: pointer;
+    background-color: yellow;
 }
 
 
