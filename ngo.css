@@ -8,9 +8,6 @@
     background-color: var(--ngobgcol);
     margin: var(--margin);
     box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
-
-
-
 }
 .logo{
     border-radius: 50%;

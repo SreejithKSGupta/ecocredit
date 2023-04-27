@@ -1,6 +1,6 @@
 homeslider();
 addbtns();
-document.getElementById('homepage').style.display = "flex";
+document.getElementById('homepage').classList.toggle("active");
 
 
 
@@ -27,10 +27,9 @@ function addbtns(){
 
 
 function switchtopage(page){
-    console.log(page);
-   var pages = document.getElementsByClassName('pageItem');
- for(var i = 0; i < pages.length; i++){
-        pages[i].style.display = "none";
+    var pages=document.getElementsByClassName("pageItem");
+    for(var i=0; i<pages.length; i++){
+        pages[i].classList.remove("active");
     }
-      document.getElementById(page).style.display = "flex";
+    document.getElementById(page).classList.toggle("active");
 }
