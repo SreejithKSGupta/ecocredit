@@ -140,7 +140,13 @@ body{
 }
 
 
-
+#newpayment{
+    background-color: rgba(172, 255, 47, 0.671);
+    border-radius: var(--bordad);
+    padding: var(--padding);
+    font-size: 120%;
+    font-weight: bold;
+}
 
 
 

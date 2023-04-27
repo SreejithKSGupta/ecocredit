@@ -99,16 +99,17 @@ function homeslider(){
 
 function addbtns(){
     document.getElementById("cfindfp").addEventListener("click", calculateCarbonFootprint);
-    document.getElementById("navbtnhome").addEventListener("click", function(){switchtopage("homepage")});
-    document.getElementById("navbtnknow").addEventListener("click", function(){switchtopage("knowpage")});
-    document.getElementById("navbtnprof").addEventListener("click", function(){switchtopage("Profile")});
-    document.getElementById("NGOlistCTAbtn").addEventListener("click", function(){switchtopage("ngopage")});
-    document.getElementById("homeCFP").addEventListener("click", function(){switchtopage("CFPcalculcpage")});
-    document.getElementById("scfpreduce").addEventListener("click", function(){switchtopage("knowpage")});
-    document.getElementById("scfpdonate").addEventListener("click", function(){switchtopage("ngopage")});
+    document.getElementById("navbtnhome").addEventListener("click", function(){switchtopage("homepage",undefined)});
+    document.getElementById("navbtnknow").addEventListener("click", function(){switchtopage("knowpage",undefined)});
+    document.getElementById("navbtnprof").addEventListener("click", function(){switchtopage("profilepage",undefined)});
+    document.getElementById("NGOlistCTAbtn").addEventListener("click", function(){switchtopage("ngopage",undefined)});
+    document.getElementById("homeCFP").addEventListener("click", function(){switchtopage("CFPcalculcpage",undefined)});
+    document.getElementById("scfpreduce").addEventListener("click", function(){switchtopage("knowpage",undefined)});
+    document.getElementById("scfpdonate").addEventListener("click", function(){switchtopage("ngopage",undefined)});
+    document.getElementById("homeprofile").addEventListener("click", function(){switchtopage("profilepage",undefined)});
 }
 
-function switchtopage(page){
+function switchtopage(page, tval){
     var pages=document.getElementsByClassName("pageItem");
     for(var i=0; i<pages.length; i++){
         pages[i].classList.remove("active");
@@ -125,9 +126,79 @@ function switchtopage(page){
         }
         var paymentbtns=document.getElementsByClassName("sdonatebtn");
         for(var i=0; i<paymentbtns.length; i++){
-            paymentbtns[i].innerHTML="Donate Rs "+amount.toFixed(2)
+            paymentbtns[i].innerHTML="Donate Rs "+amount.toFixed(2);
+            paymentbtns[i].addEventListener("click", function(){ 
+                if(amount<1000){
+                    console.log('bronze');
+                mintNFT("https://ipfs.io/ipfs/bafkreige7or5mrnd6hswr4agqazfqydqdsz43wxycxmsgz7gnwl6ommlpm");
+                }
+                else   if(amount<5000){
+                    console.log('silver');
+                    mintNFT("https://ipfs.io/ipfs/bafkreihjn3chr23w4r664ozoz6fiomqizycwm65gnfe6kf75ckyzqxb2fq");
+                    }
+                 else {
+                    console.log('gold');
+                    mintNFT("https://ipfs.io/ipfs/bafkreifjflj7vvsngsad3d6xrgibynz6trirmcii6wweturphryca5inzi");
+                    }   
+                switchtopage("profilepage", amount.toFixed(2))});
         }
-        
-}
+        }
+    if(page=="profilepage"){
+        if(tval==undefined){
+            return;
+        }
+        document.getElementById("newpayment").innerHTML="Payment Done for Rs "+tval;
+    }
 }
 
+async function mintNFT(link) {
+    const form = new FormData();
+    form.append('allowPlatformToOperateToken', 'true');
+    form.append('chain', 'goerli');
+    form.append('metadataUrl', link);
+    form.append('recipientAddress', '0x7c222aD87663C3eB89Bacce1aaeBc9b304Bf679e');
+  
+    const options = {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'X-API-Key': 'sk_live_286df229-3e93-4e9f-8ced-a270d5f19c80'
+      },
+      body: form
+    };
+  
+    try {
+      const response = await fetch('https://api.verbwire.com/v1/nft/mint/quickMintFromMetadataUrl', options);
+      const data = await response.json();
+
+      await ft();
+      console.log(data)
+      
+
+
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  function ft(){
+    const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          'X-API-Key': 'sk_live_286df229-3e93-4e9f-8ced-a270d5f19c80'
+        }
+      };
+      
+      fetch('https://api.verbwire.com/v1/nft/data/nftDetails?contractAddress=0xC338B5b660e8a656fa92e362AcAC49f785cF39F5&tokenId=7678&chain=goerli', options)
+        .then(response => response.json())
+        .then(response => sreegetimg(response))
+        .catch(err => console.error(err));
+  }
+  
+  function sreegetimg(response){
+    console.log(response);
+    // get tokenURI from response
+    var tokenURI = response.nft_details.tokenURI;
+    document.getElementById("profileNFTimg").innerHTML+="<img src="+tokenURI+" alt=' pic'/>";
+    
+  }
