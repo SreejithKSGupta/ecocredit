@@ -5,7 +5,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: rgb(7, 109, 112);
+    background-color: var(--primcol);
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    width: 90vw;
+    border-radius: var(--bordad);
 }
 .profilebox{
     display: flex;

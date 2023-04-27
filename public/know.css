@@ -3,11 +3,15 @@
     border:var(--bordad);
     border-radius: 30px;
     padding: calc(var(--padding)*2);
-    font-size: 140%;
+    font-size: 90%;
     margin: var(--margin);
-    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    box-shadow: 25px 25px 35px rgba(12, 12, 12, 0.719);
     word-wrap: break-word;
     word-break: keep-all;
+    padding: calc(var(--padding)*3);
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri';
+    font-weight: lighter;
+    font-style: oblique;
 
 
 }
@@ -19,10 +23,9 @@
     border-radius: 30px;
     padding: calc(var(--padding)*2);
     font-size: 160%;
-    margin: var(--margin);
     box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
     text-align: center;
-    margin-top: calc(var(--margin)*8);
+    margin-top: calc(var(--margin)*3);
     
 }
 .knowsemihead{
@@ -30,13 +33,13 @@
     font-weight: bolder;
     margin: var(--margin);
     font-size: 100%;
-    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    box-shadow: 25px 25px 35px rgba(12, 12, 12, 0.719);
     color: rgb(0, 0, 0);
     border:var(--bordad);
     border-radius: 30px;
     padding: calc(var(--padding)*2);
     text-align: center; 
-    margin-top: calc(var(--margin)*6);
+    margin-top: calc(var(--margin)*4);
 
 
 }

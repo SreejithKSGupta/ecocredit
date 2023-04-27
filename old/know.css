@@ -3,7 +3,7 @@
     border:var(--bordad);
     border-radius: 30px;
     padding: calc(var(--padding)*2);
-    font-size: 140%;
+    font-size: 100%;
     margin: var(--margin);
     box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
     word-wrap: break-word;
