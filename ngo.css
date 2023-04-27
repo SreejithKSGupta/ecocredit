@@ -70,6 +70,7 @@ body{
     font-size: larger;
     font-weight: bolder;
     color: var(--primcol);
+    padding: var(--padding);
 }
 .ngoAbout{
     font-size: large;
