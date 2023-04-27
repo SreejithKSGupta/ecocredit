@@ -1,0 +1,41 @@
+:root{
+    --primacol:#ff00ff;
+    --selcol:#dd33dd;
+    --bgcol: #363636;
+
+    --bordad:20px;
+    --margin:10px;
+    --padding:10px;
+}
+
+*,*:before,*:after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background-color: var(--bgcol);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#header{
+    height: 10vh;
+    width: 100vw;
+    background-color: var(--primacol);
+}
