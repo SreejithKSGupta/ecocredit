@@ -60,6 +60,30 @@ body{
 
 
 
+
+/* Header styling */
+#logo{
+    height: 8vh;
+    width: 8vh;
+    border-radius: 50%;
+    margin-left: 3vw ;
+}
+#appname{
+    font-size: 200%;
+    font-weight: bolder;
+    font-style: oblique;
+    color: white;
+}
+#infobox{
+    height: 8vh;
+    width: 8vh;
+    border-radius: 50%;
+    margin-right: 5%;
+    margin-right: 3vw;
+    cursor: pointer;
+}
+
+
 #homepage{
     height: 80vh;
     width: 100%;
