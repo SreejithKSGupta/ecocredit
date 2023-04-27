@@ -104,22 +104,14 @@ body{
 #hwelcome{
     text-align: center;
     font-size: 150%;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 #hpdetails{
     text-align: center;
     font-size: 120%;
 }
-.hpdetailsitem{
-    width:20vw;
-    margin: auto;
-    color: white;
-    text-align: center;
-    padding: var(--bordad);
-    border-radius: var(--bordad);
-    background-color: greenyellow;
-}
+
 
 
 
@@ -153,8 +145,23 @@ body{
     border: none;
     cursor: pointer;
 }
+.h {
+    width:20vw;
+    margin: auto;
+    color: white;
+    text-align: center;
+    padding: var(--bordad);
+    border-radius: var(--bordad);
+    background-color: rgb(129, 165, 75);
+}
 
-
+#hprating{
+    font-size: 200%;
+    font-weight: bolder;
+    font-style: oblique;
+    color: green;
+    text-align: center;
+}
 
 ::-webkit-scrollbar{
     width: 0px;
