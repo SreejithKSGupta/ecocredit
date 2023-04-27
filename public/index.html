@@ -49,10 +49,10 @@
                     Help us in our mission to make the world a better place.
                     Calculate your carbon footprint and take the first steps
                     towards a greener future.
-                <div id="homeCFPbtn">
-                    CALCULATE HERE
+                    <div id="homeCFPbtn">
+                        CALCULATE HERE
+                    </div>
                 </div>
-            </div>
 
                 <div id="homengolist" class="homeitem">
                     "Join us in making a positive impact by supporting
@@ -451,72 +451,90 @@
             </div>
         </div>
         <div id="CFPcalculcpage" class="pageItem">
-            <h1 class="row cmheading">Carbon Footprint Calculator</h1>
-            <div>
-                <div class="bentopq">
-                    <label for="regions">Select a region:</label>
-                    <select id="cregions">
-                        <option value="Default">Select-region</option>
-                        <option value="Northamerica">North America</option>
-                        <option value="Southamerica">South America</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Asia">Asia</option>
-                        <option value="Africa">Africa</option>
-                        <option value="Oceania">Oceania</option>
-                    </select>
-
-                    <label for="Family Number"></label>
-                    <input type="number" name="Family Number" id="cfamily" placeholder="Famil Member" value="1" />
-                </div>
+          
 
                 <div class="ccontainer col">
+                    <div class="bdataipt notice">
+                        This is a calculator for calculating the carbon footprint of an individual over a period of 1 month. Please not that, the calculator is not a 100% accurate. It is just an approximation.
+                        due to the varied nature of carbon footprint created by our actions. 
+                    </div>
+                    <div class="bdataipt">
+                        <label class="vallabel" for="regions">Select a region</label>
+                        <select id="cregions">
+                            <option value="Default">Select-region</option>
+                            <option value="Northamerica">North America</option>
+                            <option value="Southamerica">South America</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Africa">Africa</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+                    </div>
+                    <div class="bdataipt">
+                        <label class="vallabel" for="Family Number">Family Members</label>
+                        <input type="number" name="Family Number" id="cfamily" placeholder="Famil Member" value="1" />
+                    </div>
                     <div id="cfood" class="csliders">
                         <h1 class="row clheading">Food</h1>
                         <div class="ccontent">
+                            <div class="bdataipt notice">
+                               Enter the amount of food you consume in a every day. for example, if you 2 meat products a day, enter 2, or 0.25 if once in 4 days. 
+                            </div>
 
-
-                            <label for="food">meat</label>
-                            <!--slider for meat-->
-                            <input type="range" name="meat" id="cmeat" min="0" step="0.25" max="5" value="0" step="1" />
-                            <input type="text" id="cmeatInput" value="0" />
-
-                            <label for="food">dairy</label>
-                            <!--slider for dairy-->
-                            <input type="range" name="dairy" id="cdairy" min="0" step="5" max="100" value="0"
-                                step="1" />
-                            <input type="text" id="cdairyInput" value="0" />
-
-                            <label for="food">Fish</label>
-                            <!--slider for fish-->
-                            <input type="range" name="fish" id="cfish" min="0" step="5" max="100" value="0" step="1" />
-                            <input type="text" id="cfishInput" value="0" />
+                            <div class="bdataipt">
+                                <label class="vallabel" for="food">meat</label>
+                                <!--slider for meat-->
+                                <input type="range" name="meat" id="cmeat" min="0" step="0.25" max="5" value="0" step="1" />
+                                <input class="cvalshow" type="text" id="cmeatInput" value="0" />
+                            </div>
+                            <div class="bdataipt">
+                                <label class="vallabel" for="food">dairy</label>
+                                <!--slider for dairy-->
+                                <input type="range" name="dairy" id="cdairy" min="0" step="1" max="10" value="0"
+                                    step="1" />
+                                <input class="cvalshow" type="text" id="cdairyInput" value="0" />
+                            </div>
+                            <div class="bdataipt">
+                                <label class="vallabel" for="food">Fish</label>
+                                <!--slider for fish-->
+                                <input type="range" name="fish" id="cfish" min="0" step="0.25" max="10" value="0"
+                                    step="1" />
+                                <input class="cvalshow" type="text" id="cfishInput" value="0" />
+                            </div>
                         </div>
                     </div>
                     <!---transport-->
                     <div id="ctransport" class="csliders">
                         <h1 class="row clheading">Transpotation</h1>
                         <div class="ccontent">
-                            <label for="Transport">bike</label>
-                            <!--slider for meat-->
-                            <input type="range" name="Bike" id="cbike" min="0" step="0.25" max="5" value="0" step="1" />
-                            <input type="text" id="cbikeInput" value="0" />
+                            <div class="bdataipt notice">
+                                enter the Kilometers travelled by each means of transportation below, daily. for example, if you travel 10 km by bus.
+                            </div>
+                            <div class="bdataipt">
+                                <label class="vallabel" for="Transport">bike</label>
+                                <!--slider for meat-->
+                                <input type="range" name="Bike" id="cbike" min="0" step="3" max="100" value="0"  />
+                                <input class="cvalshow" type="text" id="cbikeInput" value="0" />
+                            </div>
+                            <div class="bdataipt">
 
-                            <label for="transport">Car</label>
-                            <!--slider for dairy-->
-                            <input type="range" name="Car" id="ccar" min="0" step="5" max="100" value="0" step="1" />
-                            <input type="text" id="ccarInput" value="0" />
-
-                            <label for="transport">Public Transport</label>
-                            <!--slider for vegetables-->
-                            <input type="range" name="Public transport" id="cptransport" min="0" step="5" max="100"
-                                value="0" step="1" />
-                            <input type="text" id="cptransportInput" value="0" />
-
-                            <label for="transport">Electric Vehicle</label>
-                            <!--slider for fruit-->
-                            <input type="range" name="Electric Vehicle" id="cevehicle" min="0" step="5" max="100"
-                                value="0" step="1" />
-                            <input type="text" id="cevehicleInput" value="0" />
+                                <label class="vallabel" for="transport">Car</label>
+                                <!--slider for dairy-->
+                                <input type="range" name="Car" id="ccar" min="0" step="5" max="100" value="0"  />
+                                <input class="cvalshow" type="text" id="ccarInput" value="0" />
+                            </div>
+                            <div class="bdataipt">
+                                <label class="vallabel" for="transport">Public Transport</label>
+                                <!--slider for vegetables-->
+                                <input type="range" name="Public transport" id="cptransport" min="0" step="5" max="300"  value="0"  />
+                                <input class="cvalshow" type="text" id="cptransportInput" value="0" />
+                            </div>
+                            <div class="bdataipt">
+                                <label class="vallabel" for="transport">Electric Vehicle</label>
+                                <!--slider for fruit-->
+                                <input type="range" name="Electric Vehicle" id="cevehicle" min="0" step="5" max="100" value="0" />
+                                <input class="cvalshow" type="text" id="cevehicleInput" value="0" />
+                            </div>
                         </div>
                     </div>
 
@@ -524,27 +542,30 @@
                     <div id="cdailylife" class="csliders">
                         <h1 class="row clheading">Daily Life</h1>
                         <div class="ccontent">
-                            <label for="Daily life">Hevy Electronics</label>
-                            <!--slider for HeavyElectronics-->
-                            <input type="range" name="Heavy Electronics" id="chelectronics" min="0" step="0.25" max="5"
-                                value="0" step="1" />
-                            <input type="text" id="chelectronicsInput" value="0" />
-
-                            <label for="Daily life">Light Electronics</label>
-                            <!--slider for LightElectronics-->
-                            <input type="range" name="Light Electronics" id="clelectronics" min="0" step="5" max="100"
-                                value="0" step="1" />
-                            <input type="text" id="clelectronicsInput" value="0" />
-
-                            <label for="transport">Clothes Bought</label>
-                            <!--slider for clothes Bought-->
-                            <input type="range" name="Clothes Bought" id="cclothes" min="0" step="5" max="100" value="0"
-                                step="1" />
-                            <input type="text" id="cclothesInput" value="0" />
+                            <div class="bdataipt notice">
+                               Enter the amount of items you use daily. Washing machine, Fridge, AC, etc counts as heavy electricals. TV, fan, laptop etc counts as light electronics. 
+                            </div>
+                            <div class="bdataipt">
+                                <label class="vallabel" for="Daily life">Heavy electricals</label>
+                                <!--slider for HeavyElectronics-->
+                                <input type="range" name="Heavy Electronics" id="chelectronics" min="0" step="0.25" max="5" value="0"  />
+                                <input class="cvalshow" type="text" id="chelectronicsInput" value="0" />
+                            </div>
+                            <div class="bdataipt">
+                                <label class="vallabel" for="Daily life">Light Electronics</label>
+                                <!--slider for LightElectronics-->
+                                <input type="range" name="Light Electronics" id="clelectronics" min="0"  max="100" value="0" step="1" />
+                                <input class="cvalshow" type="text" id="clelectronicsInput" value="0" />
+                            </div>
+                            <div class="bdataipt">
+                                <label class="vallabel" for="transport">Clothes Bought</label>
+                                <!--slider for clothes Bought-->
+                                <input type="range" name="Clothes Bought" id="cclothes" min="0"  max="100" value="0" step="1" />
+                                <input class="cvalshow" type="text" id="cclothesInput" value="0" />
+                            </div>
                         </div>
                     </div>
                     <div id="cfindfp" class="generalbtn">Check</div>
-                    <div id="carbonFootprintResult"></div>
                 </div>
             </div>
         </div>

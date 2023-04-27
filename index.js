@@ -20,19 +20,19 @@ var CFP;
 var regval;
 var amount = 0;
 const sliders = document.querySelectorAll("input[type='range']");
-document.getElementById('homepage').classList.toggle("active");
+document.getElementById('CFPcalculcpage').classList.toggle("active");
 var link1,link2;
 
 homeslider();
 addbtns();
-setUserLogHandler();
+setUserHandler();
 
 function setdatatofirebase(data, value) {
     console.log(auth.currentUser.uid);
     set(ref(db, '/users/'+auth.currentUser.uid+'/'+data), value);
 }
 
-function setUserLogHandler() {
+function setUserHandler() {
     const auth = getAuth();
     auth.onAuthStateChanged((user) => {
         setappuser(user);
@@ -57,7 +57,7 @@ function setappuser(user) {
         document.getElementById("profilename").innerHTML = auth.currentUser.displayName;
         document.getElementById("profileLoginbtn").innerHTML = "Sign Out";
         document.getElementById("navprofimg").src = auth.currentUser.photoURL;
-        document.getElementById("hwelcome").innerHTML = "welcome "+auth.currentUser.displayName;
+        document.getElementById("hwelcome").innerHTML = "Welcome "+auth.currentUser.displayName;
 
     }
     else {

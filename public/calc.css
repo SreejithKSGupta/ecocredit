@@ -1,6 +1,5 @@
 input{
-    width:clamp(250px, 80%, 900px);
-    height: 100%;
+    width:60%;
     background-color: var(--primcol);
     border: none;
     border-radius: var(--bordad);
@@ -13,16 +12,14 @@ input{
 }
 
 .ccontainer{
-    border: 2px solid rgb(255, 255, 255);
+   display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
 
 .ccontent{
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,10 +29,12 @@ input{
 .clheading{
     font-size: clamp(100%, 200%, 300%);
     font-family: var(--ffam);
-    color: aqua;
-    background-color: #8fd49f;
-    border-radius: 10px;
-    padding: 5px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color:var(--selcol);
+    border-radius:var(--);
+    width: 80%;
+    padding: var(--padding);
 }
 
 .cmheading{
@@ -44,28 +43,67 @@ input{
    
 }
 
-.generalbtn{
-    height: clamp(3rem, 5vh, 3rem);
-    width: clamp(7rem, 10vw, 15rem);
-    box-shadow: #8fd49f 3px 3px 3px;
-    border: 1px solid rgb(111, 194, 144);
-    background-color: rgba(22, 158, 119, 0.869);
-    cursor: pointer;
-    border-radius: 10px;
-    text-align: center;
-  }
+
 
   select {
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 4px;
+    width: 60%;
+    padding:var(--padding);
+    border-radius: var(--bordad);
     border: none;
     background-color: #f2f2f2;
+    outline: none;
+    background-color: var(--primcol);
   }
 
-  .bentopq{
-    background-color: #006d5b;
-    padding: var(--padding);
+
+  .bdataipt{
+    width: 90%;
     border-radius: var(--bordad);
+    padding: var(--padding);
+    margin: var(--margin);
+    background-color: cornflowerblue;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
   }
+
+.cvalshow{
+    width: 15%;
+}
+.vallabel{
+    width: 25%;
+    overflow: scroll;
+    color: #ffffff;
+}
+
+.notice{
+    background-color: #e7dc4183;
+}
+
+#cfindfp{
+    width: 30%;
+    background-color: #06196e;
+    color: antiquewhite;
+    font-size: 120%;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri';
+    font-weight: lighter;
+    font-style: oblique;
+    padding: calc(var(--padding)*2);
+    border-radius: var(--bordad);
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    margin: var(--margin);
+    text-align: center;
+    cursor: pointer;
+
+}
+#cfindfp:hover{
+    background-color: #002fff;
+    box-shadow: 15px 15px 25px rgba(12, 12, 12, 0.719);
+    transform: scale(1.05);
+    transition: 0.5s;
+    cursor: pointer;
+}
 
