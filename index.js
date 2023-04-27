@@ -1,8 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
-import { Database, getDatabase, ref, set } from "firebase/database";
-
-
+import { Database, getDatabase, ref,get, set,update } from "firebase/database";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAT-4YqiyuGVuQl_ADh0QivNYIJEEwPgaI",
@@ -14,21 +12,20 @@ const firebaseConfig = {
     measurementId: "G-JFLPFFX3Z5",
     databaseURL: "https://ecoredit-default-rtdb.asia-southeast1.firebasedatabase.app",
 };
-
 const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
 const auth = getAuth(app);
 const db = getDatabase(app);
-
-homeslider();
-addbtns();
-setUserLogHandler();
 var CFP;
 var regval;
 var amount = 0;
 const sliders = document.querySelectorAll("input[type='range']");
 document.getElementById('homepage').classList.toggle("active");
+var link1,link2;
 
+homeslider();
+addbtns();
+setUserLogHandler();
 
 function setdatatofirebase(data, value) {
     console.log(auth.currentUser.uid);
@@ -56,13 +53,11 @@ function loginout() {
 
 function setappuser(user) {
     if (user) {
-        console.log(user);
         document.getElementById("profileimg").src = auth.currentUser.photoURL;
         document.getElementById("profilename").innerHTML = auth.currentUser.displayName;
         document.getElementById("profileLoginbtn").innerHTML = "Sign Out";
         document.getElementById("navprofimg").src = auth.currentUser.photoURL;
         document.getElementById("hwelcome").innerHTML = "welcome "+auth.currentUser.displayName;
-        setdatatofirebase('NFTs',"text");
 
     }
     else {
@@ -147,7 +142,8 @@ function calculateCarbonFootprint() {
     const totalCarbonFootprint = (personalcost + familycost) / familyMembersValue;
     CFP = totalCarbonFootprint.toFixed(2);
     regval = regionMultiplier;
-    // display the total carbon footprint in the HTML
+    
+    setdatatofirebase('cfp',CFP);
     switchtopage('sCFPresultpage', undefined, "Carbon Footprint");
 
 }
@@ -197,22 +193,10 @@ function switchtopage(page, tval, head) {
         for (var i = 0; i < paymentbtns.length; i++) {
             paymentbtns[i].innerHTML = "Donate Rs " + amount.toFixed(2);
             paymentbtns[i].addEventListener("click", function () {
-                if (amount < 1000) {
-                    console.log('bronze');
-                    mintNFT("https://ipfs.io/ipfs/bafkreige7or5mrnd6hswr4agqazfqydqdsz43wxycxmsgz7gnwl6ommlpm");
-                }
-                else if (amount < 5000) {
-                    console.log('silver');
-                    mintNFT("https://ipfs.io/ipfs/bafkreihjn3chr23w4r664ozoz6fiomqizycwm65gnfe6kf75ckyzqxb2fq");
-                }
-                else {
-                    console.log('gold');
-                    mintNFT("https://ipfs.io/ipfs/bafkreifjflj7vvsngsad3d6xrgibynz6trirmcii6wweturphryca5inzi");
-                }
-                switchtopage("profilepage", amount.toFixed(2), "Profile")
-            });
-        }
-    }
+                payngo(this.id, amount.toFixed(2));}
+                );
+            }
+            }
     if (page == "profilepage") {
         if (tval == undefined) {
             return;
@@ -221,55 +205,87 @@ function switchtopage(page, tval, head) {
     }
 }
 
-async function mintNFT(link) {
+async function mintNFT(link1,link2) {
     const form = new FormData();
     form.append('allowPlatformToOperateToken', 'true');
     form.append('chain', 'goerli');
-    form.append('metadataUrl', link);
+    form.append('metadataUrl', link1);
     form.append('recipientAddress', '0x7c222aD87663C3eB89Bacce1aaeBc9b304Bf679e');
-
+  
     const options = {
-        method: 'POST',
-        headers: {
-            accept: 'application/json',
-            'X-API-Key': 'sk_live_286df229-3e93-4e9f-8ced-a270d5f19c80'
-        },
-        body: form
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'X-API-Key': 'sk_live_1b3fa46c-97e1-42e0-bdba-afd4cc426f98'
+      },
+      body: form
     };
-
+  
     try {
-        const response = await fetch('https://api.verbwire.com/v1/nft/mint/quickMintFromMetadataUrl', options);
-        const data = await response.json();
+      const response = await fetch('https://api.verbwire.com/v1/nft/mint/quickMintFromMetadataUrl', options);
+      const data = await response.json();
 
-        await ft();
-        console.log(data)
-
+      await ft(link2);
+      console.log(data)
+      
 
 
     } catch (err) {
-        console.error(err);
+      console.error(err);
     }
-}
-function ft() {
+  }
+
+  function ft(link2){
     const options = {
         method: 'GET',
         headers: {
-            accept: 'application/json',
-            'X-API-Key': 'sk_live_286df229-3e93-4e9f-8ced-a270d5f19c80'
+          accept: 'application/json',
+          'X-API-Key': 'sk_live_1b3fa46c-97e1-42e0-bdba-afd4cc426f98'
         }
-    };
-
-    fetch('https://api.verbwire.com/v1/nft/data/nftDetails?contractAddress=0xC338B5b660e8a656fa92e362AcAC49f785cF39F5&tokenId=7678&chain=goerli', options)
+      };
+      
+      fetch(link2, options)
         .then(response => response.json())
         .then(response => sreegetimg(response))
         .catch(err => console.error(err));
-}
+  }
 
 function sreegetimg(response) {
     console.log(response);
-    // get tokenURI from response
     var tokenURI = response.nft_details.tokenURI;
-    
     document.getElementById("profileNFTimg").innerHTML += "<img src=" + tokenURI + " alt=' pic'/>";
 
+}
+
+function payngo(id,amount){
+    var score =get(ref(db,"/users/"+auth.currentUser.uid+'/payments'));
+    score += amount/1000;
+    score=100;
+   setdatatofirebase("score",score);
+    setdatatofirebase("payments",amount);
+
+    var payments =get(ref(db,"/users/"+auth.currentUser.uid+'/payments'));
+    payments+={amount:amount,ngo:id,date:new Date()};
+
+    setdatatofirebase("paymentslist",payments);
+
+        if(amount<1000){
+        link1='https://ipfs.io/ipfs/bafkreige7or5mrnd6hswr4agqazfqydqdsz43wxycxmsgz7gnwl6ommlpm'
+        link2='https://api.verbwire.com/v1/nft/data/nftDetails?contractAddress=0xC338B5b660e8a656fa92e362AcAC49f785cF39F5&tokenId=7690&chain=goerli'
+         mintNFT(link1,link2);
+        }
+  
+        else if(amount<5000){
+          link1='https://ipfs.io/ipfs/bafkreihjn3chr23w4r664ozoz6fiomqizycwm65gnfe6kf75ckyzqxb2fq'
+          link2='https://api.verbwire.com/v1/nft/data/nftDetails?contractAddress=0xC338B5b660e8a656fa92e362AcAC49f785cF39F5&tokenId=7701&chain=goerli'
+          mintNFT(link1,link2);
+        }
+  
+        else{
+          link1='https://ipfs.io/ipfs/bafkreifjflj7vvsngsad3d6xrgibynz6trirmcii6wweturphryca5inzi'
+          link2='https://api.verbwire.com/v1/nft/data/nftDetails?contractAddress=0xC338B5b660e8a656fa92e362AcAC49f785cF39F5&tokenId=7700&chain=goerli'
+          mintNFT(link1,link2);
+        }
+  
+    switchtopage("profilepage",amount, "Profile")
 }
