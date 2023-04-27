@@ -13,6 +13,28 @@
     <!--carbon footprint calculator-->
     <h1 class="row cmheading">Carbon Footprint Calculator</h1>
     <div>
+      <div class="col">
+        <label for="regions">Select a region:</label>
+        <select id="cregions">
+          <option value="Default">Select-region</option>
+          <option value="North-america">North America</option>
+          <option value="South-america">South America</option>
+          <option value="Europe">Europe</option>
+          <option value="Asia">Asia</option>
+          <option value="Africa">Africa</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+
+        <label for="Family Number"></label>
+        <input
+          type="number"
+          name="Family Number"
+          id="cfamily"
+          placeholder="Famil Member"
+          value="1"
+        />
+      </div>
+
       <div class="ccontainer col">
         <div id="cfood" class="csliders">
           <h1 class="row clheading">Food</h1>
@@ -119,20 +141,6 @@
               step="1"
             />
             <input type="text" id="cevehicleInput" value="0" />
-
-            <label for="food">Aeroplane</label>
-            <!--slider for grains -->
-            <input
-              type="range"
-              name="Aeroplane"
-              id="cflight"
-              min="0"
-              step="5"
-              max="100"
-              value="0"
-              step="1"
-            />
-            <input type="text" id="cflightInput" value="0" />
           </div>
         </div>
 
