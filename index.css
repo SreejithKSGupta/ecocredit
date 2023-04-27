@@ -81,6 +81,8 @@ body{
     padding: var(--padding);
 }
 
+
+
 .homeitem:hover{
     background-color: var(--selcol);
 }
@@ -96,6 +98,33 @@ body{
     object-fit: cover;
     border-radius: var(--bordad);
 }
+
+
+
+#hwelcome{
+    text-align: center;
+    font-size: 150%;
+    color: white;
+}
+
+#hpdetails{
+    text-align: center;
+    font-size: 120%;
+}
+.hpdetailsitem{
+    width:20vw;
+    margin: auto;
+    color: white;
+    text-align: center;
+    padding: var(--bordad);
+    border-radius: var(--bordad);
+    background-color: greenyellow;
+}
+
+
+
+
+
 
 
 
