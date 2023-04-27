@@ -19,12 +19,6 @@ input{
     outline: none;
 }
 
-h1{
-    font-size: 200%;
-    font-family: var(--ffam);
-    color: blueviolet;
-}
-
 .ccontainer{
     border: 2px solid rgb(255, 255, 255);
     width: 100%;
@@ -60,9 +54,7 @@ h1{
    
 }
 
-
 .generalbtn{
-
     height: clamp(3rem, 5vh, 3rem);
     width: clamp(7rem, 10vw, 15rem);
     box-shadow: #8fd49f 3px 3px 3px;
@@ -71,7 +63,6 @@ h1{
     cursor: pointer;
     border-radius: 10px;
     text-align: center;
-    
   }
 
   select {
