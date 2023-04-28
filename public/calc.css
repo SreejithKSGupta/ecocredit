@@ -1,14 +1,18 @@
 input{
-    width:60%;
+    width:55%;
     background-color: var(--primcol);
     border: none;
     border-radius: var(--bordad);
     padding: var(--padding);
     margin: var(--margin);
-    font-size: var(--fsize);
+    font-size: 80%;
     font-family: var(--ffam);
-    color: var(--fcol);
+    color:white;
     outline: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri';
+    font-weight: lighter;
+    font-style: oblique;
+
 }
 
 .ccontainer{
@@ -27,14 +31,17 @@ input{
 
 
 .clheading{
-    font-size: clamp(100%, 200%, 300%);
+    font-size: 120%;
     font-family: var(--ffam);
     color: rgb(255, 255, 255);
     text-align: center;
     background-color:var(--selcol);
-    border-radius:var(--);
+    border-radius:var(--bordad);
     width: 80%;
     padding: var(--padding);
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri';
+    font-weight: lighter;
+    font-style: oblique;
 }
 
 .cmheading{
@@ -61,7 +68,7 @@ input{
     border-radius: var(--bordad);
     padding: var(--padding);
     margin: var(--margin);
-    background-color: cornflowerblue;
+    background-color:var(--primcol);
     margin-top: 5vh;
     display: flex;
     flex-direction: row;
@@ -70,16 +77,24 @@ input{
   }
 
 .cvalshow{
-    width: 15%;
+    width: 20%;
 }
 .vallabel{
     width: 25%;
     overflow: scroll;
     color: #ffffff;
+    font-size: 80%;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri';
+    font-weight: lighter;
+    font-style: oblique;
 }
 
 .notice{
-    background-color: #e7dc4183;
+    background-color: rgb(248, 191, 2);
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri';
+    font-weight: lighter;
+    font-style: oblique;
+    font-size: 80%;
 }
 
 #cfindfp{
@@ -105,5 +120,8 @@ input{
     transform: scale(1.05);
     transition: 0.5s;
     cursor: pointer;
+}
+#cregions{
+    color: white;
 }
 

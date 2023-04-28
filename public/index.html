@@ -173,11 +173,13 @@
         <div id="sCFPresultpage" class="pageItem">
             <div id="scfpvalue"> 300KG/Month</div>
             <div id="scfpoffsetcost">3000/month</div>
-
-            <div id="scfpreduce">You can reduce your carbon footprint by upto 80% by following green lifestyle</div>
+            <div id="scfpreduce">You can reduce your carbon footprint by upto 80% by following green lifestyle<br>
+              <div class="btn" id="scfpreducebtn"> How to reduce</div>
+            </div>
             <div id="scfpdonate"> Help Offset your Carbon FootPrint now
                 Donate an Amount to offset your carbon footprint to one of
-                our trusted NGOs, who fight Everyday to make our Planet A little bit Greener.</div>
+                our trusted NGOs, who fight Everyday to make our Planet A little bit Greener.<br>
+                <div class="btn" id="scfpoffsetbtn"> DONATE</div></div>
         </div>
         <div id="ngopage" class="pageItem">
             <div class="ngos">
@@ -480,13 +482,13 @@
                             </div>
 
                             <div class="bdataipt">
-                                <label class="vallabel" for="food">meat</label>
+                                <label class="vallabel" for="food">Meat</label>
                                 <!--slider for meat-->
                                 <input type="range" name="meat" id="cmeat" min="0" step="0.25" max="5" value="0" step="1" />
                                 <input class="cvalshow" type="text" id="cmeatInput" value="0" />
                             </div>
                             <div class="bdataipt">
-                                <label class="vallabel" for="food">dairy</label>
+                                <label class="vallabel" for="food">Dairy</label>
                                 <!--slider for dairy-->
                                 <input type="range" name="dairy" id="cdairy" min="0" step="1" max="10" value="0"
                                     step="1" />
@@ -506,10 +508,10 @@
                         <h1 class="row clheading">Transpotation</h1>
                         <div class="ccontent">
                             <div class="bdataipt notice">
-                                enter the Kilometers travelled by each means of transportation below, daily. for example, if you travel 10 km by bus.
+                                Enter the Kilometers travelled by each means of transportation below, daily. For example, if you travel 10 km by bus.
                             </div>
                             <div class="bdataipt">
-                                <label class="vallabel" for="Transport">bike</label>
+                                <label class="vallabel" for="Transport">Bike</label>
                                 <!--slider for meat-->
                                 <input type="range" name="Bike" id="cbike" min="0" step="3" max="100" value="0"  />
                                 <input class="cvalshow" type="text" id="cbikeInput" value="0" />
@@ -599,6 +601,10 @@
                 <div id="profileNFT">
                     TOTAL NFTS: 30
                 </div>
+            </div>
+            <div id="Walletadress">
+                <input type="text" placeholder="enter your wallet adress" id="walladdr">
+                <div id="walladdrbtn">Save</div>
             </div>
 
             <div id="profileNFTimg">
