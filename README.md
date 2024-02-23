@@ -1,5 +1,5 @@
 
-# Ecocredit
+#  Ecocredit
 
 Ecocredit is a web application that aims to help users reduce their carbon footprint and reward them with non-fungible tokens (NFTs) for their eco-friendly actions. The application is built with HTML, CSS and JavaScript, and uses blockchain technology to create and distribute NFTs.
 
